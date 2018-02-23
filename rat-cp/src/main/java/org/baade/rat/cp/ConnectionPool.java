@@ -5,4 +5,8 @@ package org.baade.rat.cp;
  * Created by zz@baade.org on 2017/9/27.
  */
 public class ConnectionPool {
+
+    public static void main(String[] args) {
+
+    }
 }
