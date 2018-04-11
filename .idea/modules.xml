@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/baade-common/baade-common.iml" filepath="$PROJECT_DIR$/baade-common/baade-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/rat-core/rat-core.iml" filepath="$PROJECT_DIR$/rat-core/rat-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/rat-cp/rat-cp.iml" filepath="$PROJECT_DIR$/rat-cp/rat-cp.iml" />
       <module fileurl="file://$PROJECT_DIR$/rat-example/rat-example.iml" filepath="$PROJECT_DIR$/rat-example/rat-example.iml" />

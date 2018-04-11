@@ -7,14 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="baade-common" />
         <module name="rat-cp" />
         <module name="rat-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="baade-common" target="1.8" />
-      <module name="rat-core" target="1.5" />
+      <module name="rat-core" target="1.8" />
       <module name="rat-cp" target="1.5" />
       <module name="rat-example" target="1.5" />
     </bytecodeTargetLevel>
