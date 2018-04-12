@@ -1,7 +1,11 @@
 package org.baade.rat.cp;
 
+import org.baade.rat.cp.crud.ICrud;
+import org.baade.rat.cp.crud.mysql.MysqlCrud;
+
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 /**
  * 数据库驱动的默认类名
@@ -9,7 +13,7 @@ import java.util.Optional;
  */
 public enum DriverClassNameDefault {
 
-    MYSQL("com.mysql.jdbc.Driver"),
+    MYSQL("com.mysql.jdbc.Driver", MysqlCrud::new),
 
 //    ORACLE("oracle.jdbc.driver.OracleDriver"),
 //
@@ -20,14 +24,27 @@ public enum DriverClassNameDefault {
     ;
 
     private String className;
+    private Supplier<ICrud> supplier;
 
-    DriverClassNameDefault(String className){
+    DriverClassNameDefault(String className, Supplier<ICrud> supplier){
         this.className = className;
+        this.supplier = supplier;
 
     }
 
     public String getClassName() {
         return className;
+    }
+
+    public Supplier<ICrud> getSupplier() {
+        return supplier;
+    }
+
+    public ICrud newCrud(){
+        if (supplier == null) {
+            return null;
+        }
+        return supplier.get();
     }
 
     public static DriverClassNameDefault getType(final String driverClassName){

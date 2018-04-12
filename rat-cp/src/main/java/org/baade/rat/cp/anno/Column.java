@@ -26,4 +26,6 @@ public @interface Column {
 
     String defaultValue() default "";
 
+    int decimalsLength() default 4;
+
 }

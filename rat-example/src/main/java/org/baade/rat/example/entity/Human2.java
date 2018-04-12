@@ -5,10 +5,10 @@ import org.baade.rat.cp.anno.Column;
 import org.baade.rat.cp.anno.Entity;
 import org.baade.rat.cp.anno.ID;
 
-@Entity(tableName = "human")
-public class Human {
+@Entity
+public class Human2 {
 
-    @ID(name = "iddddd")
+    @ID(name = "id")
     private long id;
 
     @Column(isNull = false, comment = "名字", defaultValue = "hahas")
@@ -16,11 +16,12 @@ public class Human {
 
     @Column
     private String sex;
-    @Column(defaultValue = "2")
+    @Column(defaultValue = "3")
     private int sexXS;
+
     @Column
     private char sexXS1;
-    @Column
+    @Column(type = ColumnType.DEFAULT)
     private short sexXS2;
     @Column
     private float sexXS3;
@@ -39,7 +40,6 @@ public class Human {
     private String sexXS9;
     @Column(type = ColumnType.MEDIUMTEXT)
     private String sexXS10;
-
 
     public long getId() {
         return id;

@@ -22,8 +22,10 @@ public @interface ID {
 
     String comment() default "";
 
-    boolean isNull() default true;
+    boolean isNull() default false;
 
     String defaultValue() default "";
+
+    int decimalsLength() default 4;
 
 }

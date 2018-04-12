@@ -20,7 +20,7 @@ public class ClassScanner {
     private static final Logger log = LoggerFactory.getLogger(ClassScanner.class);
 
     static {
-        log.debug("{}", SystemProperty.toDetailString());
+        log.trace("{}", SystemProperty.toDetailString());
     }
 
     /**
@@ -36,15 +36,14 @@ public class ClassScanner {
 
         String[] files = classPaths.split(File.pathSeparator);
         for (String filePath : files) {
-//            System.out.println(filePath);
             File file = new File(filePath);
             if (ClassUtils.isJar(file.getName())) {
-                log.debug("DO SCAN JAR: {}", filePath);
+                log.trace("DO SCAN JAR: {}", filePath);
                 scanJar(basePackageName, file, tree);
             }
 
             if (file.isDirectory()) {
-                log.debug("DO SCAN DIR: ", filePath);
+                log.trace("DO SCAN DIR: ", filePath);
                 scanDir(basePackageName, file, file.getAbsolutePath(), tree);
             }
         }
@@ -94,7 +93,7 @@ public class ClassScanner {
 
     private static void add(String basePackageName, String classFullName, Tree<ClassModel> tree) {
         if (classFullName.startsWith(basePackageName)) {
-            log.debug("SCAN FOUND: ", classFullName);
+            log.trace("SCAN FOUND: ", classFullName);
             ClassModel cm = new ClassModel(classFullName);
             tree.put(cm, cm.getPath());
         }

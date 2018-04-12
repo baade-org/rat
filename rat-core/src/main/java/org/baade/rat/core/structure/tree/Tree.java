@@ -77,14 +77,14 @@ public class Tree<T> {
             if (i == keys.length - 1) {
                 childNode = new TreeNode<>(key, parentNode, t);
                 parentNode.put(key, childNode);
-                log.debug("Tree add node[{}] at parent node [{}]", childNode, parentNode);
+                log.trace("Tree add node[{}] at parent node [{}]", childNode, parentNode);
                 return;
             }
             childNode = parentNode.getChildNode(key);
             if (childNode == null) {
                 childNode = new TreeNode<>(key, parentNode, null);
                 parentNode.put(key, childNode);
-                log.debug("Tree add node[{}] at parent node [{}]", childNode, parentNode);
+                log.trace("Tree add node[{}] at parent node [{}]", childNode, parentNode);
             }
             parentNode = childNode;
         }
