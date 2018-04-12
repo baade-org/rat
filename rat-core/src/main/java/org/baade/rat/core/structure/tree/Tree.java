@@ -3,7 +3,9 @@ package org.baade.rat.core.structure.tree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * The type Tree.
@@ -115,6 +117,29 @@ public class Tree<T> {
             }
             sb.append(childNode.toString() + "\n");
             toDetailString(childNode, index, sb);
+        }
+    }
+
+
+    public List<T> getInstances(TreeNode<T> parentNode){
+        if (parentNode == null){
+            return null;
+        }
+        List<T> list = new ArrayList<>();
+        if (parentNode.getInst() != null){
+            list.add(parentNode.getInst());
+        }
+        getInstances(parentNode, list);
+        return list;
+    }
+
+    private void getInstances(TreeNode<T> parentNode, List<T> list){
+        Collection<TreeNode<T>> allChildNodes = parentNode.getAllChildNodes();
+        for (TreeNode<T> childNode : allChildNodes) {
+            if (childNode.getInst() != null){
+                list.add(childNode.getInst());
+            }
+            getInstances(childNode, list);
         }
     }
 }

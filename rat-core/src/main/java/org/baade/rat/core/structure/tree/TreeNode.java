@@ -60,6 +60,46 @@ public class TreeNode<T> {
         return childNodes.values();
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public T getInst() {
+        return inst;
+    }
+
+    public void setInst(T inst) {
+        this.inst = inst;
+    }
+
+    public TreeNode<T> getParentNode() {
+        return parentNode;
+    }
+
+    public void setParentNode(TreeNode<T> parentNode) {
+        this.parentNode = parentNode;
+    }
+
+    public TreeMap<String, TreeNode<T>> getChildNodes() {
+        return childNodes;
+    }
+
+    public void setChildNodes(TreeMap<String, TreeNode<T>> childNodes) {
+        this.childNodes = childNodes;
+    }
+
+    public int getInstChildCount() {
+        return instChildCount;
+    }
+
+    public void setInstChildCount(int instChildCount) {
+        this.instChildCount = instChildCount;
+    }
+
     @Override
     public String toString() {
         return "TreeNode{" +

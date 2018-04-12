@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rat>
+
+    <database>
+        <scan_packageName>org.baade</scan_packageName>
+        <url>jdbc:mysql://127.0.0.1:3306/xxx</url>
+        <driver_class>com.mysql.jdbc.Driver</driver_class>
+        <schema>xxx</schema>
+        <properties>
+            <p key="user" value="root" />
+            <p key="password" value="password"/>
+            <p key="useUnicode" value="true"/>
+            <p key="characterEncoding" value="utf8"/>
+            <p key="createDatabaseIfNotExist" value="true"/>
+        </properties>
+    </database>
+
+</rat>

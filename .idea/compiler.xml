@@ -14,8 +14,8 @@
     <bytecodeTargetLevel>
       <module name="baade-common" target="1.8" />
       <module name="rat-core" target="1.8" />
-      <module name="rat-cp" target="1.5" />
-      <module name="rat-example" target="1.5" />
+      <module name="rat-cp" target="8" />
+      <module name="rat-example" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
