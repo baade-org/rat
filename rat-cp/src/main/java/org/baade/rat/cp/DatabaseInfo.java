@@ -26,6 +26,8 @@ public class DatabaseInfo {
     private String url;
     private String driverClass;
     private String schema;
+    private int poolSize;
+    private boolean showSql;
 
     private List<DBProperty> dbProperties;
 
@@ -65,6 +67,25 @@ public class DatabaseInfo {
     public void setSchema(String schema) {
         this.schema = schema;
     }
+
+    @XmlElement(name="pool_size")
+    public int getPoolSize() {
+        return poolSize;
+    }
+
+    public void setPoolSize(int poolSize) {
+        this.poolSize = poolSize;
+    }
+
+    @XmlElement(name="show_sql")
+    public boolean isShowSql() {
+        return showSql;
+    }
+
+    public void setShowSql(boolean showSql) {
+        this.showSql = showSql;
+    }
+
     @XmlElementWrapper(name="properties")
     @XmlElement(name = "p")
     public List<DBProperty> getDbProperties() {
@@ -90,6 +111,8 @@ public class DatabaseInfo {
                 ", url='" + url + '\'' +
                 ", driverClass='" + driverClass + '\'' +
                 ", schema='" + schema + '\'' +
+                ", poolSize=" + poolSize +
+                ", showSql=" + showSql +
                 ", dbProperties=" + dbProperties +
                 ", type=" + type +
                 '}';

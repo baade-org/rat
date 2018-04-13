@@ -17,10 +17,13 @@ public class ConnectionThreadFactory implements ThreadFactory {
         this.databaseInfo = databaseInfo;
     }
 
+
+
     @Override
     public Thread newThread(Runnable r) {
         ConnectionThread connectionThread = new ConnectionThread(r, this.databaseInfo);
         connectionThread.setDaemon(true);
+        connectionThread.setName("Connection Thread-" + connectionThread.getId());
         return connectionThread;
     }
 

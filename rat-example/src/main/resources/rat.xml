@@ -6,8 +6,11 @@
         <url>jdbc:mysql://127.0.0.1:3306/xxx</url>
         <driver_class>com.mysql.jdbc.Driver</driver_class>
         <schema>xxx</schema>
+        <pool_size>5</pool_size>
+        <show_sql>true</show_sql>
+
         <properties>
-            <p key="user" value="root" />
+            <p key="user" value="root" />ConnectionPool
             <p key="password" value="password"/>
             <p key="useUnicode" value="true"/>
             <p key="characterEncoding" value="utf8"/>
