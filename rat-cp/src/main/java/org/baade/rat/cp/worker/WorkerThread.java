@@ -8,7 +8,7 @@ public class WorkerThread extends Thread{
 
     public WorkerThread(Runnable r) {
         super(r);
-        WorkerManager.getInstance().put(this);
+//        WorkerManager.getInstance().put(this);
         tasks = new LinkedBlockingQueue<>();
     }
 
