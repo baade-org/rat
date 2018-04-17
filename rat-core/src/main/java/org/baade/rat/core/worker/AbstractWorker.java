@@ -1,6 +1,7 @@
 package org.baade.rat.core.worker;
 
-import org.baade.rat.core.worker.transport.Transport;
+import org.baade.rat.core.worker.context.IContext;
+import org.baade.rat.core.worker.service.IService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +19,7 @@ public abstract class AbstractWorker implements IWorker{
 
     private String id;
 
-    private LinkedBlockingQueue<Transport> queue;
+    private LinkedBlockingQueue<IContext> queue;
 
     private ScheduledExecutorService executor;
 
@@ -42,12 +43,12 @@ public abstract class AbstractWorker implements IWorker{
         executor = Executors.newSingleThreadScheduledExecutor(new WorkerThreadFactory());
         executor.scheduleAtFixedRate(() -> {
             try {
-                Transport transport = queue.poll();
-                if (transport != null){
-                    // TODO: 2018/4/14 execute transport
-//                    transportHandler(transport);
-
-                }
+//                Transport transport = queue.poll();
+//                if (transport != null){
+//                    // TODO: 2018/4/14 execute transport
+////                    transportHandler(transport);
+//
+//                }
                 heartbeat();
             } catch (Exception e) {
                 e.printStackTrace();

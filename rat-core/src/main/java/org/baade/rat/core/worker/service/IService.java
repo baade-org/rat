@@ -1,4 +1,4 @@
-package org.baade.rat.core.worker;
+package org.baade.rat.core.worker.service;
 
 public interface IService {
 

@@ -1,8 +1,8 @@
 package org.baade.rat.core.worker;
 
-import org.baade.rat.core.worker.transport.Transport;
+import org.baade.rat.core.worker.context.IContext;
+import org.baade.rat.core.worker.service.IService;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -14,7 +14,7 @@ public class WorkerGroup implements IWorker{
 
 
 
-    private LinkedBlockingQueue<Transport> queue;
+    private LinkedBlockingQueue<IContext> queue;
 
     private ScheduledExecutorService readQueueExecutor;
     private ExecutorService runExecutor;
@@ -37,10 +37,10 @@ public class WorkerGroup implements IWorker{
         readQueueExecutor = Executors.newSingleThreadScheduledExecutor();
         readQueueExecutor.scheduleWithFixedDelay(() -> {
 
-            Transport transport = queue.poll();
-            if (transport != null){
-                // TODO: 2018/4/15 execute transport 
-            }
+//            Transport transport = queue.poll();
+//            if (transport != null){
+//                // TODO: 2018/4/15 execute transport
+//            }
 
 
         }, 0, 10, TimeUnit.MILLISECONDS);

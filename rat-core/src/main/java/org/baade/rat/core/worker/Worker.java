@@ -1,8 +1,7 @@
 package org.baade.rat.core.worker;
 
-import org.baade.rat.core.worker.transport.Transfer;
-import org.baade.rat.core.worker.transport.Transport;
-import org.baade.rat.core.worker.transport.TransportManager;
+import org.baade.rat.core.worker.context.IContext;
+import org.baade.rat.core.worker.service.IService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +19,7 @@ public class Worker extends AbstractWorker {
 
     private String id;
 
-    private LinkedBlockingQueue<Transport> queue;
+    private LinkedBlockingQueue<IContext> queue;
 
     private ScheduledExecutorService executor;
 
@@ -40,12 +39,12 @@ public class Worker extends AbstractWorker {
         executor = Executors.newSingleThreadScheduledExecutor(new WorkerThreadFactory());
         executor.scheduleAtFixedRate(() -> {
             try {
-                Transport transport = queue.poll();
-                if (transport != null){
-                    // TODO: 2018/4/14 execute transport
-                    transportHandler(transport);
-
-                }
+//                Transport transport = queue.poll();
+//                if (transport != null){
+//                    // TODO: 2018/4/14 execute transport
+//                    transportHandler(transport);
+//
+//                }
                 heartbeat();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -56,33 +55,6 @@ public class Worker extends AbstractWorker {
     }
 
 
-    private void transportHandler(Transport transport){
-//        Transport transport1 = TransportManager.getInstance().get(transport.getId());
-        Transfer receiver = transport.getReceiver();
-        String receiverWorkerId = receiver.getWorkerId();
-
-        // TODO: 2018/4/15 调用本线程的方法
-        if (this.getId().equals(receiverWorkerId)){
-
-            
-            return;
-        }
-
-        // TODO: 2018/4/15 调用其他线程的方法
-        if (!transport.isCallback()){
-            Worker worker = WorkerManager.getInstance().get(receiverWorkerId);
-            return;
-        }
-
-        // TODO: 2018/4/15 其他线程执行完成后，回调到本线程
-        Transfer sender = transport.getSender();
-        String senderWorkerId = sender.getWorkerId();
-        if (this.getId().equals(senderWorkerId)){
 
 
-            return;
-        }
-
-        // TODO: 2018/4/15 投递错误，找不到对应的执行线程
-    }
 }
