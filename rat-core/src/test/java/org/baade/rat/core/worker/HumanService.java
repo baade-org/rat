@@ -3,10 +3,10 @@ package org.baade.rat.core.worker;
 import org.baade.rat.core.worker.anno.Service;
 import org.baade.rat.core.worker.context.IRequest;
 import org.baade.rat.core.worker.context.IResponse;
-import org.baade.rat.core.worker.service.IService;
+import org.baade.rat.core.worker.service.AbstractService;
 
 @Service(bind = HumanWorker.class)
-public class HumanService implements IService {
+public class HumanService extends AbstractService {
 
 
     @Override

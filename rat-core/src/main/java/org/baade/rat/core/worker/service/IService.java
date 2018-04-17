@@ -1,6 +1,10 @@
 package org.baade.rat.core.worker.service;
 
+import org.baade.rat.core.worker.IWorker;
+
 public interface IService {
 
-    public void heartbeat();
+    void heartbeat();
+
+    IWorker getWorker();
 }

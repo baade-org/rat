@@ -34,13 +34,13 @@ public class WorkerManager {
 
     public RPC rpc(RPCFunction rpcFunction, Object... objects){
 
-        return new RPC();
+        return new RPC("", IService.class);
 
     }
 
     public RPC rpc(String methodName, Class<? extends IService> serviceClazz, Object... objects){
 
-        return new RPC();
+        return new RPC(methodName, serviceClazz);
 
     }
 }
