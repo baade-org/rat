@@ -10,5 +10,4 @@ public interface IResponse {
 
     IContext getContext();
 
-    CallbackFunction getCallbackFunction();
 }
