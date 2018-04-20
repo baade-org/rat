@@ -1,9 +1,10 @@
 package org.baade.rat.core.rpc;
 
+import org.baade.rat.core.cycle.ILifeCycle;
+import org.baade.rat.core.service.IService;
 import org.baade.rat.core.worker.context.IRequest;
-import org.baade.rat.core.worker.service.IService;
 
-public interface IRPC {
+public interface IRPC extends ILifeCycle {
 
 
     boolean isSync();

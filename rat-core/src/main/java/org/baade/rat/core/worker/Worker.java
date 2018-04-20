@@ -1,7 +1,7 @@
 package org.baade.rat.core.worker;
 
+import org.baade.rat.core.service.IService;
 import org.baade.rat.core.worker.context.IContext;
-import org.baade.rat.core.worker.service.IService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +45,7 @@ public class Worker extends AbstractWorker {
 //                    transportHandler(transport);
 //
 //                }
-                heartbeat();
+//                heartbeat();
             } catch (Exception e) {
                 e.printStackTrace();
                 log.error("Worker run ERROR, worker's id =[{}].", getId(), e);

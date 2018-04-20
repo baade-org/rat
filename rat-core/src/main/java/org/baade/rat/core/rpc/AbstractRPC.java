@@ -1,14 +1,15 @@
 package org.baade.rat.core.rpc;
 
 import org.baade.rat.core.Constants;
+import org.baade.rat.core.cycle.AbstractLifeCycle;
 import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
+import org.baade.rat.core.service.IService;
 import org.baade.rat.core.utils.StringUtils;
 import org.baade.rat.core.worker.context.IRequest;
-import org.baade.rat.core.worker.service.IService;
 
-public abstract class AbstractRPC implements IRPC {
+public abstract class AbstractRPC extends AbstractLifeCycle implements IRPC {
 
     protected int timeout = Constants.RPC_DEFAULT_TIMEOUT;
     protected String rpcMethodName;
@@ -17,6 +18,7 @@ public abstract class AbstractRPC implements IRPC {
 
 
     public AbstractRPC() {
+        super();
     }
 
     protected boolean checkSelf() throws RPCCallbackFunctionIsNull, RPCMethodNameIsNull, RPCServiceClassIsNull {

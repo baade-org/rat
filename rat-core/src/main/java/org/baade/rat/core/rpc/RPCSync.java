@@ -3,40 +3,27 @@ package org.baade.rat.core.rpc;
 import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
-import org.baade.rat.core.worker.context.IContext;
+import org.baade.rat.core.service.IService;
+import org.baade.rat.core.worker.WorkerManager;
 import org.baade.rat.core.worker.context.IRequest;
 import org.baade.rat.core.worker.context.IResponse;
-import org.baade.rat.core.worker.service.IService;
 
-import java.util.Map;
-import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class RPCSync extends AbstractRPC implements IRPCSync {
 
     @Override
-    public IResponse launch() throws RPCServiceClassIsNull, RPCCallbackFunctionIsNull, RPCMethodNameIsNull {
+    public IResponse launch() throws RPCServiceClassIsNull, RPCCallbackFunctionIsNull, RPCMethodNameIsNull, InterruptedException, ExecutionException, TimeoutException {
         checkSelf();
-        Callable<IResponse> callable = () -> {
+        FutureTask<IResponse> futureTask = WorkerManager.getInstance().get("sss").runRPC(this);
+        return futureTask.get(getTimeout(), TimeUnit.MILLISECONDS);
+    }
 
-            return new IResponse() {
-                @Override
-                public Map<String, Object> getAttributes() {
-                    return null;
-                }
-
-                @Override
-                public <T> T getAttribute(String key) {
-                    return null;
-                }
-
-                @Override
-                public IContext getContext() {
-                    return null;
-                }
-            };
-        };
-
-
+    @Override
+    public FutureTask<IResponse> getFutureTask() {
         return null;
     }
 
@@ -55,7 +42,6 @@ public class RPCSync extends AbstractRPC implements IRPCSync {
         this.timeout = timeout;
         return this;
     }
-
 
 
     @Override

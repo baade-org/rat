@@ -3,7 +3,7 @@ package org.baade.rat.core.rpc;
 import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
-import org.baade.rat.core.worker.service.IService;
+import org.baade.rat.core.service.IService;
 
 public interface IRPCAsync extends IRPC {
 

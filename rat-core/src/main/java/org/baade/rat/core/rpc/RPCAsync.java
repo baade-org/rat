@@ -3,8 +3,8 @@ package org.baade.rat.core.rpc;
 import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
+import org.baade.rat.core.service.IService;
 import org.baade.rat.core.worker.context.IRequest;
-import org.baade.rat.core.worker.service.IService;
 
 public class RPCAsync extends AbstractRPC implements IRPCAsync {
 

@@ -6,7 +6,7 @@ public class WorkerThreadFactory implements ThreadFactory {
 
     @Override
     public Thread newThread(Runnable r) {
-        Thread thread = newThread(r);
+        Thread thread = new Thread(r);
         thread.setDaemon(true);
         return thread;
     }
