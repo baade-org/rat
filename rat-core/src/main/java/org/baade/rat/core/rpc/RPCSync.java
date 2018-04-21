@@ -1,24 +1,23 @@
 package org.baade.rat.core.rpc;
 
+import org.baade.rat.core.context.DefaultRequest;
+import org.baade.rat.core.context.IRequest;
+import org.baade.rat.core.context.IResponse;
 import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
 import org.baade.rat.core.service.IService;
 import org.baade.rat.core.worker.WorkerManager;
-import org.baade.rat.core.worker.context.IRequest;
-import org.baade.rat.core.worker.context.IResponse;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 
 public class RPCSync extends AbstractRPC implements IRPCSync {
 
     @Override
-    public IResponse launch() throws RPCServiceClassIsNull, RPCCallbackFunctionIsNull, RPCMethodNameIsNull, InterruptedException, ExecutionException, TimeoutException {
+    public IResponse launch() throws RPCServiceClassIsNull, RPCCallbackFunctionIsNull,
+            RPCMethodNameIsNull, InterruptedException, ExecutionException, TimeoutException {
         checkSelf();
-        FutureTask<IResponse> futureTask = WorkerManager.getInstance().get("sss").runRPC(this);
+        Future<IResponse> futureTask = WorkerManager.getInstance().get("humanWorker").submit(this);
         return futureTask.get(getTimeout(), TimeUnit.MILLISECONDS);
     }
 
@@ -58,6 +57,7 @@ public class RPCSync extends AbstractRPC implements IRPCSync {
 
     @Override
     public RPCSync setRPCMethodRequestParameters(Object... requestParameters) {
+        this.request = DefaultRequest.build(requestParameters);
         return this;
     }
 

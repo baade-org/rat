@@ -1,8 +1,7 @@
 package org.baade.rat.core.worker;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class WorkerManager {
 
@@ -12,17 +11,17 @@ public class WorkerManager {
         return ourInstance;
     }
 
-    private Map<String, Worker> workers;
+    private Map<String, IWorker> workers;
 
     private WorkerManager() {
-        workers = Collections.synchronizedMap(new HashMap<>());
+        workers = new ConcurrentHashMap<>();
     }
 
-    public void put(Worker worker){
+    public void put(IWorker worker){
         workers.put(worker.getId(), worker);
     }
 
-    public Worker get(String workerId){
+    public IWorker get(String workerId){
         return workers.get(workerId);
     }
 

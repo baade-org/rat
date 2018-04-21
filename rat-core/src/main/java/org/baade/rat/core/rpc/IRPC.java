@@ -1,8 +1,8 @@
 package org.baade.rat.core.rpc;
 
+import org.baade.rat.core.context.IRequest;
 import org.baade.rat.core.cycle.ILifeCycle;
 import org.baade.rat.core.service.IService;
-import org.baade.rat.core.worker.context.IRequest;
 
 public interface IRPC extends ILifeCycle {
 
@@ -15,7 +15,7 @@ public interface IRPC extends ILifeCycle {
 
     Class<? extends IService> getRPCClass();
 
-    IRequest getRPCMethodRequestParameters();
+    IRequest getRequest();
 
 
 //    <T extends IRPC> T newBuilder();

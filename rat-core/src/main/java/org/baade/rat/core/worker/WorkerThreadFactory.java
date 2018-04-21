@@ -4,10 +4,16 @@ import java.util.concurrent.ThreadFactory;
 
 public class WorkerThreadFactory implements ThreadFactory {
 
+    private IWorker worker;
+
+    public WorkerThreadFactory(IWorker worker) {
+        this.worker = worker;
+    }
+
     @Override
     public Thread newThread(Runnable r) {
-        Thread thread = new Thread(r);
-        thread.setDaemon(true);
+        WorkerThread thread = new WorkerThread(r, this.worker);
+//        thread.setDaemon(true);
         return thread;
     }
 }

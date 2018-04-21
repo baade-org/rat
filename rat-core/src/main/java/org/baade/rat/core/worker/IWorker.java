@@ -1,12 +1,13 @@
 package org.baade.rat.core.worker;
 
+import org.baade.rat.core.context.IResponse;
 import org.baade.rat.core.cycle.ILifeCycle;
-import org.baade.rat.core.rpc.IRPC;
+import org.baade.rat.core.rpc.IRPCAsync;
+import org.baade.rat.core.rpc.IRPCSync;
 import org.baade.rat.core.service.IService;
-import org.baade.rat.core.worker.context.IResponse;
 
 import java.util.Collection;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 public interface IWorker extends ILifeCycle {
 
@@ -22,6 +23,12 @@ public interface IWorker extends ILifeCycle {
 
     Collection<IService> getAllServices();
 
+    <T> Future<T> submit(Callable<T> callable);
 
-    FutureTask<IResponse> runRPC(IRPC rpc);
+    Future<IResponse> submit(IRPCSync rpcSync);
+
+    void submit(Runnable runnable);
+
+    void submit(IRPCAsync rpcAsync) throws InterruptedException, ExecutionException, TimeoutException;
+
 }

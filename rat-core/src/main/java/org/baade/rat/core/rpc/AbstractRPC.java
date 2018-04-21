@@ -1,13 +1,13 @@
 package org.baade.rat.core.rpc;
 
 import org.baade.rat.core.Constants;
+import org.baade.rat.core.context.IRequest;
 import org.baade.rat.core.cycle.AbstractLifeCycle;
 import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
 import org.baade.rat.core.service.IService;
 import org.baade.rat.core.utils.StringUtils;
-import org.baade.rat.core.worker.context.IRequest;
 
 public abstract class AbstractRPC extends AbstractLifeCycle implements IRPC {
 
@@ -48,7 +48,7 @@ public abstract class AbstractRPC extends AbstractLifeCycle implements IRPC {
     }
 
     @Override
-    public IRequest getRPCMethodRequestParameters() {
+    public IRequest getRequest() {
         return this.request;
     }
 }

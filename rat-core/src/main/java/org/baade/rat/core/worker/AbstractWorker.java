@@ -1,15 +1,18 @@
 package org.baade.rat.core.worker;
 
+import org.baade.rat.core.context.IContext;
+import org.baade.rat.core.context.IRequest;
+import org.baade.rat.core.context.IResponse;
 import org.baade.rat.core.cycle.AbstractLifeCycle;
+import org.baade.rat.core.rpc.CallbackFunction;
 import org.baade.rat.core.rpc.IRPC;
-import org.baade.rat.core.rpc.RPCSync;
+import org.baade.rat.core.rpc.IRPCAsync;
+import org.baade.rat.core.rpc.IRPCSync;
 import org.baade.rat.core.service.IService;
-import org.baade.rat.core.worker.context.IContext;
-import org.baade.rat.core.worker.context.IRequest;
-import org.baade.rat.core.worker.context.IResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Map;
@@ -21,11 +24,11 @@ public abstract class AbstractWorker extends AbstractLifeCycle implements IWorke
 
     private static final Logger log = LoggerFactory.getLogger(AbstractWorker.class);
 
-    private String id;
+    protected String id;
 
     private LinkedBlockingQueue<IContext> queue;
 
-    private ScheduledExecutorService executor;
+    protected ExecutorService executorService;
 
     protected Map<String, IService> services;
 
@@ -34,8 +37,6 @@ public abstract class AbstractWorker extends AbstractLifeCycle implements IWorke
         this.id = UUID.randomUUID().toString();
         this.queue = new LinkedBlockingQueue<>();
         this.services = new ConcurrentHashMap<>();
-
-        init();
     }
 
     @Override
@@ -72,67 +73,99 @@ public abstract class AbstractWorker extends AbstractLifeCycle implements IWorke
         return this.services.values();
     }
 
-    private void init() {
-        executor = Executors.newSingleThreadScheduledExecutor(new WorkerThreadFactory());
-        executor.scheduleAtFixedRate(() -> {
-            try {
-//                Transport transport = queue.poll();
-//                if (transport != null){
-//                    // TODO: 2018/4/14 execute transport
-////                    transportHandler(transport);
-//
-//                }
-//                heartbeat();
-            } catch (Exception e) {
-                e.printStackTrace();
-                log.error("Worker run ERROR, worker's id =[{}].", getId(), e);
-
-            }
-        }, 0, 10, TimeUnit.MILLISECONDS);
-    }
-
-//    public void heartbeat(){
-//        services.values().forEach(s -> s.heartbeat());
-//    }
 
 
     @Override
-    public FutureTask<IResponse> runRPC(IRPC rpc) {
+    public Future<IResponse> submit(IRPCSync rpcSync) {
         Callable<IResponse> callable = () -> {
-            if (rpc instanceof RPCSync){
-                RPCSync rpcSync = (RPCSync)rpc;
-                Class<? extends IService> rpcServiceClass = rpcSync.getRPCClass();
-                IService service = this.getServiceByClass(rpcServiceClass);
-
-                if (service != null){
-                    String rpcMethodName = rpcSync.getRPCMethodName();
-                    IRequest rpcRequest = rpcSync.getRPCMethodRequestParameters();
-                    Method method = null;
-                    Object invokeResult = null;
-                    if (rpcRequest != null){
-                        method = rpcServiceClass.getDeclaredMethod(rpcMethodName, IRequest.class);
-                        invokeResult = method.invoke(service, rpcRequest);
-                    } else {
-                        method = rpcServiceClass.getDeclaredMethod(rpcMethodName);
-                        invokeResult = method.invoke(service);
-                    }
-
-                    if (invokeResult instanceof IResponse){
-                        return (IResponse)invokeResult;
-                    }
-
-                    return null;
-
-                }
+            IService service = getService(rpcSync);
+            if (service == null){
+                return null;
             }
-            return null;
+            return invoke(rpcSync, service);
         };
+        return submit(callable);
+    }
 
-        FutureTask<IResponse> futureTask = new FutureTask<>(callable);
-        executor.submit(futureTask);
+    private IService getService(IRPC rpc){
+        Class<? extends IService> rpcServiceClass = rpc.getRPCClass();
+        IService service = this.getServiceByClass(rpcServiceClass);
+        return service;
+    }
 
-        return futureTask;
+    private IResponse invoke(IRPC rpc, IService service) throws NoSuchMethodException,
+            InvocationTargetException, IllegalAccessException {
+        String rpcMethodName = rpc.getRPCMethodName();
+        IRequest rpcRequest = rpc.getRequest();
+        Method method = null;
+        Object invokeResult = null;
+        if (rpcRequest != null){
+            method = service.getClass().getDeclaredMethod(rpcMethodName, IRequest.class);
+            invokeResult = method.invoke(service, rpcRequest);
+        } else {
+            method = service.getClass().getDeclaredMethod(rpcMethodName);
+            invokeResult = method.invoke(service);
+        }
+
+        if (invokeResult instanceof IResponse){
+            return (IResponse)invokeResult;
+        }
+
+        return null;
+
+    }
 
 
+
+    @Override
+    public void submit(IRPCAsync rpcAsync) throws InterruptedException, ExecutionException, TimeoutException {
+        Runnable runnable = () -> {
+            boolean isCallback = rpcAsync.isCallback();
+            if (isCallback){
+                rpcAsync.getListener().apply(rpcAsync.getResponse());
+                return;
+            }
+
+            IService service = getService(rpcAsync);
+            if (service == null){
+                return;
+            }
+
+            try {
+                IResponse response = invoke(rpcAsync, service);
+                CallbackFunction listener = rpcAsync.getListener();
+                if (listener != null){
+                    rpcAsync.setCallback(true);
+                    rpcAsync.setResponse(response);
+                    String callbackWorkerId = rpcAsync.getCallbackWorkerId();
+                    WorkerManager.getInstance().get(callbackWorkerId).submit(rpcAsync);
+                }
+
+
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (TimeoutException e) {
+                e.printStackTrace();
+            }
+        };
+        submit(runnable);
+    }
+
+    @Override
+    public void submit(Runnable runnable) {
+        this.executorService.submit(runnable);
+    }
+
+    @Override
+    public <T> Future<T> submit(Callable<T> callable) {
+        return this.executorService.submit(callable);
     }
 }

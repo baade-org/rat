@@ -1,6 +1,6 @@
 package org.baade.rat.core.rpc;
 
-import org.baade.rat.core.worker.context.IResponse;
+import org.baade.rat.core.context.IResponse;
 
 public interface CallbackFunction {
 
