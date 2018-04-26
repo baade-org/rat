@@ -8,6 +8,7 @@ import org.baade.rat.core.exception.RPCServiceClassIsNull;
 import org.baade.rat.core.rpc.RPCAsync;
 import org.baade.rat.core.rpc.RPCSync;
 import org.baade.rat.core.service.IService;
+import org.baade.rat.core.service.ServiceManager;
 import org.baade.rat.core.worker.anno.Service;
 
 import java.util.concurrent.ExecutionException;
@@ -50,6 +51,9 @@ public class WorldService implements IService {
 
     public void testRPCAsyncFlag() throws RPCMethodNameIsNull, RPCCallbackFunctionIsNull, RPCServiceClassIsNull, InterruptedException, ExecutionException, TimeoutException {
 
+        HumanService humanService = ServiceManager.get(HumanService.class);
+
+
         RPCAsync.newBuilder()
                 .setRPCMethodName("flag") //
                 .setRPCClass(HumanService.class) //
@@ -65,5 +69,10 @@ public class WorldService implements IService {
 
     public void asyncCallback(IResponse response){
         System.out.println("RPCAsync asyncCallback result: " + response + " : Thread:" + Thread.currentThread());
+    }
+
+    @Override
+    public void bindWorker(IWorker worker) {
+
     }
 }

@@ -11,4 +11,6 @@ public interface IService extends ILifeCycle {
     String getId();
 
     IWorker getWorker();
+
+    void bindWorker(IWorker worker);
 }

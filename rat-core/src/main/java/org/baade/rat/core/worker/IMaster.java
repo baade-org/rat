@@ -1,6 +1,6 @@
 package org.baade.rat.core.worker;
 
-public interface IPlant {
+public interface IMaster {
 
     void startup();
 

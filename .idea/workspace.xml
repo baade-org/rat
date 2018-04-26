@@ -2,41 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="5a0cdafc-2e81-4454-9f11-3cbf5f8f1dcd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultParameter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/IContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/IParameter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/IRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/IResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IPlant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/SingleWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/ServiceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/AbstractLifeCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/AbstractLifeCycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/AbstractRPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/AbstractRPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/CallbackFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/CallbackFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCAsync.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCAsync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCSync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCAsync.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCAsync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCSync.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/IService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IMaster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/Worker.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThreadFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThreadFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IAttribute.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IResponse.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldWorker.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/rat-core/target/" />
     <ignored path="$PROJECT_DIR$/rat-example/target/" />
@@ -60,64 +35,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractWorker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AbstractWorker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-358">
-              <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+            <state relative-caret-position="2171">
+              <caret line="214" selection-start-line="214" selection-end-line="214" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1377#1378#0" expanded="true" />
-                <element signature="e#1436#1437#0" expanded="true" />
-                <element signature="e#5758#5759#0" expanded="true" />
-                <element signature="e#5811#5812#0" expanded="true" />
-                <element signature="e#5747#5748#0" expanded="true" />
-                <element signature="e#5807#5808#0" expanded="true" />
+                <element signature="e#6711#6712#0" expanded="true" />
+                <element signature="e#6751#6752#0" expanded="true" />
+                <element signature="e#6255#6256#0" expanded="true" />
+                <element signature="e#6320#6321#0" expanded="true" />
+                <element signature="e#6800#6801#0" expanded="true" />
+                <element signature="e#6864#6865#0" expanded="true" />
+                <element signature="e#6936#6937#0" expanded="true" />
+                <element signature="e#7007#7008#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RPCAsync.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCAsync.java">
+      <file leaf-file-name="WorkerManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3031#3032#0" expanded="true" />
-                <element signature="e#3067#3068#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorldService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="56" column="49" lean-forward="true" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HumanWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanWorker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CallbackFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/CallbackFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="266">
+              <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -131,32 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRPCAsync.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCAsync.java">
+      <file leaf-file-name="WorldService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkerThreadFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThreadFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HumanService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="525">
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,6 +90,57 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
               <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="817">
+              <caret line="49" column="13" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="49" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkerGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IWorker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="912">
+              <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IMaster.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IMaster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HumanService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="734">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,8 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/transport/Transfer.java" />
-        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/I.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IContext.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/RPCFunction.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/CallbackFunction.java" />
@@ -229,7 +199,6 @@
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/ICycle.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/AbstractCycle.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/ILifeCycle.java" />
-        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/IService.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/AbstractLifeCycle.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IPlant.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerFactory.java" />
@@ -249,15 +218,18 @@
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultResponse.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCAsync.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/CallbackFunction.java" />
-        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java" />
-        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java" />
-        <option value="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCSync.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCAsync.java" />
         <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThreadFactory.java" />
-        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/ServiceManager.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/IService.java" />
         <option value="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanService.java" />
         <option value="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IMaster.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java" />
+        <option value="$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java" />
       </list>
     </option>
   </component>
@@ -305,6 +277,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,16 +318,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="context" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rat-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rat" type="b2602c69:ProjectViewProjectNode" />
@@ -557,9 +521,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -775,12 +738,14 @@
       <workItem from="1524063507676" duration="435000" />
       <workItem from="1524063981415" duration="298000" />
       <workItem from="1524064317218" duration="5210000" />
-      <workItem from="1524239905600" duration="18941000" />
+      <workItem from="1524239905600" duration="21347000" />
+      <workItem from="1524584261672" duration="243000" />
+      <workItem from="1524755794793" duration="2808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178954000" />
+    <option name="totallyTimeSpent" value="184411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -788,40 +753,40 @@
     <layout>
       <window_info anchor="right" id="Key Promoter X" order="7" />
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32824427" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="bottom" id="Event Log" order="17" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" x="303" y="414" width="1196" height="602" id="Run" order="2" weight="0.43385214" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26979166" />
       <window_info anchor="bottom" id="Tail" order="16" weight="0.3293348" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="bottom" x="0" y="273" width="1920" height="533" id="Debug" order="3" weight="0.4951362" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32879376" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" x="303" y="414" width="1196" height="602" id="Run" order="2" visible="true" weight="0.43385214" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26979166" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" x="0" y="273" width="1920" height="533" id="Debug" order="3" weight="0.4951362" />
       <window_info anchor="bottom" id="JRebel Executor" order="13" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.32879376" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Statistic" order="11" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="CheckStyle" order="10" />
       <window_info id="JRebel" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="JRebel Console" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32824427" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -841,7 +806,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java</url>
-          <line>140</line>
+          <line>133</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
@@ -856,16 +821,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rat-cp/src/main/java/org/baade/rat/cp/RATContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="72" column="97" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rat-cp/src/main/java/org/baade/rat/cp/anno/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -902,10 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="56" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="56" />
-          <folding>
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,33 +878,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/service/IService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/service/AbstractService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/service/IService.java" />
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/service/AbstractService.java" />
     <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/cycle/ILifeCycle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -968,58 +897,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/IService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IAttribute.java" />
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IContext.java" />
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IRequest.java" />
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/context/IResponse.java" />
     <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/IParameter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="27" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1034,9 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,12 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#977#978#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,23 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCSync.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1102,28 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IPlant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2432#2433#0" expanded="true" />
-            <element signature="e#2459#2460#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,36 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="19" column="83" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,17 +983,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThreadFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/IService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/service/ServiceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1199,7 +1020,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/IRPCAsync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
+        <state relative-caret-position="342">
           <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1207,18 +1028,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java">
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/rpc/RPCSync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+        <state relative-caret-position="836">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1436#1437#0" expanded="true" />
-            <element signature="e#5758#5759#0" expanded="true" />
-            <element signature="e#5811#5812#0" expanded="true" />
-            <element signature="e#5747#5748#0" expanded="true" />
-            <element signature="e#5807#5808#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding>
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/context/DefaultParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1230,29 +1090,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanWorker.java">
+    <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="817">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="49" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/HumanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="38" selection-end-column="7" />
+        <state relative-caret-position="734">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rat-core/src/test/java/org/baade/rat/core/worker/WorldService.java">
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="56" column="49" lean-forward="true" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+        <state relative-caret-position="912">
+          <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/WorkerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/IMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rat-core/src/main/java/org/baade/rat/core/worker/AbstractWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2171">
+          <caret line="214" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6711#6712#0" expanded="true" />
+            <element signature="e#6751#6752#0" expanded="true" />
+            <element signature="e#6255#6256#0" expanded="true" />
+            <element signature="e#6320#6321#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6864#6865#0" expanded="true" />
+            <element signature="e#6936#6937#0" expanded="true" />
+            <element signature="e#7007#7008#0" expanded="true" />
           </folding>
         </state>
       </provider>

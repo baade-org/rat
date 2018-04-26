@@ -44,11 +44,15 @@ public class HumanService implements IService {
 //
 //    }
 
-//    public IResponse flag(){
-//        System.out.println("HumanService flag of no request"+ " : Thread:" + Thread.currentThread());
-////        return null;
-//        return DefaultResponse.build("xxx2", "xxxV2", "yyyy2" , "yyyV2");
-//    }
+    public IResponse flag(){
+        System.out.println("HumanService flag of no request"+ " : Thread:" + Thread.currentThread());
+//        return null;
+        return DefaultResponse.build("xxx2", "xxxV2", "yyyy2" , "yyyV2");
+    }
 
 
+    @Override
+    public void bindWorker(IWorker worker) {
+
+    }
 }
