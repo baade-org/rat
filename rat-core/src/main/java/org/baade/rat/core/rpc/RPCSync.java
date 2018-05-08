@@ -7,9 +7,10 @@ import org.baade.rat.core.exception.RPCCallbackFunctionIsNull;
 import org.baade.rat.core.exception.RPCMethodNameIsNull;
 import org.baade.rat.core.exception.RPCServiceClassIsNull;
 import org.baade.rat.core.service.IService;
-import org.baade.rat.core.worker.WorkerManager;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeoutException;
 
 public class RPCSync extends AbstractRPC implements IRPCSync {
 
@@ -17,8 +18,10 @@ public class RPCSync extends AbstractRPC implements IRPCSync {
     public IResponse launch() throws RPCServiceClassIsNull, RPCCallbackFunctionIsNull,
             RPCMethodNameIsNull, InterruptedException, ExecutionException, TimeoutException {
         checkSelf();
-        Future<IResponse> futureTask = WorkerManager.getInstance().get("humanWorker").submit(this);
-        return futureTask.get(getTimeout(), TimeUnit.MILLISECONDS);
+//        Future<IResponse> futureTask = WorkerManager.getInstance().get("humanWorker").submit(this);
+//        return futureTask.get(getTimeout(), TimeUnit.MILLISECONDS);
+//
+        return null;
     }
 
     @Override
